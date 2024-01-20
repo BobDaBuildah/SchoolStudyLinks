@@ -1,0 +1,60 @@
+<?php 	//rename to index.php
+
+/*
+suggested .htaccess:
+SetEnv PHP_VER 5_TEST
+SetEnv REGISTER_GLOBALS 0
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    #RewriteCond %{HTTPS} off
+    #RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+*/
+	$name = 'Google';
+	$canonical = 'https://www.google.com'.$_SERVER['SCRIPT_URL'];
+	$url = $canonical.'?'.http_build_query($_GET);
+?>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta charset="utf-8">
+		<link rel="canonical" href="<?= $canonical ?>"/>
+		<title>Parrainage <?= $name ?></title>
+		<?php
+		if(!empty($_POST))
+		{
+			?>
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+			<?php
+		}
+		?>
+	</head>
+	<body style="height:100%;">
+		<iframe id="clientFrame" src="<?= empty($_POST)?$url:'' ?>" style="position:absolute; left:0; right:0; top:0; bottom:0; width:100%; height:100%; border:none;"></iframe>
+		<?php
+		if(!empty($_POST))
+		{
+			?>
+			<form action="<?= $url ?>" method="POST" target="clientFrame" id="clientFrameForm">
+			<?php foreach($_POST AS $key => $value)
+				{ 
+					?>
+				 	<input type="hidden" name="<?= $key ?>" value="<?= $value ?>" />
+					<?php 
+				} 
+			?>
+			</form>
+			<script>
+			$().ready(function() {
+				$('#clientFrameForm').submit();
+			});
+			</script>
+			<?php
+		}
+		?>
+	</body>
+</html>
