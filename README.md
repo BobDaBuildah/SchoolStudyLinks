@@ -7,6 +7,7 @@
 <p>ug.wtf
 <p>monkeyMartgame.github.io
 <p>66games.io
+  <p><a href=Games/Proxy>Proxy V1</a></p>
 <p><li class="masthead__menu-item">
           <a href="Games/tetris.html">TETRIS</a>
         </li>
