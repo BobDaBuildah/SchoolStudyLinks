@@ -1,4 +1,3 @@
-theme: jekyll-theme-minimal
 <html>
 <p>Hello This Is a website im making to play games at school.<p>
 <p>Here Are some links (tetris at bottom)
