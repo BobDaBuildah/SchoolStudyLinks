@@ -10,3 +10,6 @@
 <p><li class="masthead__menu-item">
           <a href="Games/tetris.html">TETRIS</a>
         </li>
+<p><li class="masthead__menu-item">
+          <a href="Games/PinballBreakout">Pinball Breakout</a>
+        </li>
