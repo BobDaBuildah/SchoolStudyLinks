@@ -8,5 +8,5 @@
 <p>monkeyMartgame.github.io
 <p>66games.io
 <p><li class="masthead__menu-item">
-          <a href="BobDaBuildah.github.io/tetris.html">TETRIS</a>
+          <a href="tetris.html">TETRIS</a>
         </li>
